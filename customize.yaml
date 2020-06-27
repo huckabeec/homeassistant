@@ -1,0 +1,122 @@
+#
+# Garage Door Sensor
+#
+ sensor.vision_zd2105us5_recessed_doorwindow_sensor_sourcenodeid:
+   hidden: true
+ sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control:
+   hidden: true
+ sensor.vision_zd2105us5_recessed_doorwindow_sensor_burglar:
+   hidden: true
+ sensor.vision_zd2105us5_recessed_doorwindow_sensor_system:
+   hidden: true
+ sensor.vision_zd2105us5_recessed_doorwindow_sensor_alarm_level:
+   hidden: true
+ sensor.vision_zd2105us5_recessed_doorwindow_sensor_alarm_type:
+   hidden: true
+
+#
+# Driveway Sensor
+#
+ sensor.ecolink_doorwindow_sensor_access_control:
+   hidden: true
+ sensor.ecolink_doorwindow_sensor_alarm_level:
+   hidden: true
+ sensor.ecolink_doorwindow_sensor_alarm_type:
+   hidden: true
+ sensor.ecolink_doorwindow_sensor_burglar:
+   hidden: true
+ sensor.ecolink_doorwindow_sensor_power_management:
+   hidden: true
+ sensor.ecolink_doorwindow_sensor_sourcenodeid:
+   hidden: true
+ binary_sensor.ecolink_doorwindow_sensor_sensor: 
+   hidden: true
+
+#
+# EcoBee sensors
+#
+ binary_sensor.bedroom_occupancy:
+   hidden: true
+ sensor.bedroom_temperature:
+   hidden: true
+ sensor.downstairs_humidity:
+   hidden: true
+ binary_sensor.downstairs_occupancy:
+   hidden: true
+ sensor.downstairs_temperature:
+   hidden: true
+ binary_sensor.guest_room_occupancy:
+   hidden: true
+ sensor.guest_room_temperature:
+   hidden: true
+ sensor.kids_room_occupancy:
+   hidden: true
+ sensor.kids_room_temperature:
+   hidden: true
+ binary_sensor.living_room_occupancy:
+   hidden: true
+ sensor.living_room_temperature:
+   hidden: true
+ binary_sensor.office_occupancy:
+   hidden: true
+ sensor.office_temperature:
+   hidden: true
+ sensor.upstairs_humidity:
+   hidden: true
+ binary_sensor.man_cave_occupancy:
+   hidden: true
+ sensor.man_cave_temperature:
+   hidden: true
+ binary_sensor.upstairs_occupancy:
+   hidden: true
+ sensor.upstairs_temperature:
+   hidden: true
+ thermostat.downstairs:
+   friendly_name: Downstairs EcoBee3
+   hidden: true
+ thermostat.upstairs:
+   friendly_name: Upstairs EcoBee3
+   hidden: true
+  
+# Device trackers
+ device_tracker.craigsiphone:
+   icon: mdi:cellphone-iphone
+ device_tracker.craigsipad:
+   icon: mdi:tablet-ipad
+ device_tracker.erinsipad:
+   icon: mdi:tablet-ipad
+ device_tracker.erinsiphone:
+   icon: mdi:cellphone-iphone
+ device_tracker.craigworkmbp:
+   icon: mdi:laptop-mac
+
+ device_tracker.craig_s_iphone:
+   hidden: true
+ sensor.craig_s_iphone_activity:
+   hidden: true
+ sensor.craig_s_iphone_average_active_pace:
+   hidden: true
+ sensor.craig_s_iphone_battery_level:
+   hidden: true
+ sensor.craig_s_iphone_battery_state:
+   hidden: true
+ sensor.craig_s_iphone_bssid:
+   hidden: true
+ sensor.craig_s_iphone_connection_type:
+   hidden: true
+ sensor.craig_s_iphone_distance:
+   hidden: true
+ sensor.craig_s_iphone_floors_ascended:
+   hidden: true
+ sensor.craig_s_iphone_floors_descended:
+   hidden: true
+ sensor.craig_s_iphone_geocoded_location:
+   hidden: true
+ sensor.craig_s_iphone_last_update_trigger:
+   hidden: true
+ sensor.craig_s_iphone_sim_1:
+   hidden: true
+ sensor.craig_s_iphone_ssid:
+   hidden: true
+ sensor.craig_s_iphone_steps:
+   hidden: true

@@ -1,0 +1,63 @@
+default_config:
+  unit_system: imperial 
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+homeassistant:
+  name: Home
+  time_zone: America/New_York
+  latitude: 32.7175 
+  longitude: -80.128889 
+  elevation: 20
+  customize: !include customize.yaml
+
+zwave:
+  usb_path: /dev/ttyACM0
+  polling_interval: 1000
+
+dyson:
+  username: !secret dyson_username 
+  password: !secret dyson_password
+  language: GB 
+  devices:
+    - device_id: !secret dyson_device_id 
+      device_ip: 10.0.60.17
+
+apple_tv:
+  - host: 10.0.10.228
+    start_off: true
+    name: Craft Room Apple TV
+    login_id: !secret cr_id
+  - host: 10.0.10.229
+    start_off: true
+    name: Man Cave Apple TV
+    login_id: !secret mc_id
+  - host: 10.0.10.233
+    start_off: true
+    name: Master Bedroom Apple TV
+    login_id: !secret mbr_id
+  - host: 10.0.10.234
+    start_off: true
+    name: Living Room Apple TV
+    login_id: !secret lr_id
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+device_tracker: !include device_tracker.yaml
+
+webostv:
+  - host: 10.0.60.16
+    name: Living Room TV
+  - host: 10.0.60.15
+    name: Man Cave TV
+
+samsungtv:
+  - host: 10.0.60.14
+    name: Master Bedroom TV
+
+media_player:
+
+notify:

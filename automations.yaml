@@ -1,0 +1,110 @@
+- id: homekit-start
+  alias: Start HomeKit
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+  - delay: 00:05
+  - service: homekit.start
+- id: '1593179110548'
+  alias: Turn on Driveway Lights in the Morning
+  description: ''
+  trigger:
+  - at: 05:30:00
+    platform: time
+  condition: []
+  action:
+  - device_id: d309cf7d4b5d4657b382339993b56c16
+    domain: switch
+    entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch_2
+    type: turn_on
+- id: '1593179256035'
+  alias: Turn Off the Driveway Lights at Night
+  description: ''
+  trigger:
+  - at: '21:00'
+    platform: time
+  condition: []
+  action:
+  - device_id: d309cf7d4b5d4657b382339993b56c16
+    domain: switch
+    entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch_2
+    type: turn_off
+- id: '1593179381500'
+  alias: Turn off Driveway Lights at Sunrise
+  description: ''
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - device_id: d309cf7d4b5d4657b382339993b56c16
+    domain: switch
+    entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch_2
+    type: turn_off
+- id: '1593179451964'
+  alias: Turn on Driveway Lights at Sunset
+  description: ''
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - device_id: d309cf7d4b5d4657b382339993b56c16
+    domain: switch
+    entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch_2
+    type: turn_on
+- id: garagedoor-open
+  alias: 'Garage Entry Open'
+  trigger:
+    platform: state
+    entity_id: sensor.garage_entry_door
+    from: 'closed'
+    to: 'open'
+  action:
+    - service: notify.living_room_tv
+      data:
+        message: "Garage Entry Door is Open!"
+    - service: notify.alexa_media
+      data:
+        target:
+        - media_player.living_room_echo
+        data:
+          type: announce
+        message: '<voice name="Brian"><lang xml:lang="en-GB">Garage Entry Door has been opened.</lang></voice>'
+- id: garagedoor-closed
+  alias: 'Garage Entry Closed'
+  trigger:
+    platform: state
+    entity_id: sensor.garage_entry_door
+    from: 'open'
+    to: 'closed'
+  action:
+    - service: notify.living_room_tv
+      data:
+        message: "Garage Entry Door is Closed!"
+    - service: notify.alexa_media
+      data:
+        target: 
+        - media_player.living_room_echo
+        data:
+          type: announce
+        message: '<voice name="Brian"><lang xml:lang="en-GB">Garage Entry Door has been secured.</lang></voice>'
+- id: drivewaymotion-state 
+  alias: 'Driveway Motion State'
+  trigger:
+    platform: state
+    entity_id: sensor.driveway_sensor
+    from: 'closed'
+    to: 'open'
+  action:
+    - service: notify.living_room_tv
+      data:
+        message: "Motion Detected in Driveway!"
+    - service: notify.alexa_media
+      data:
+        target: 
+        - media_player.living_room_echo
+        data:
+          type: announce 
+        message: '<voice name="Brian"><lang xml:lang="en-GB">I am terribly sorry to interrupt sir, but motion detected in the driveway.</lang></voice>'

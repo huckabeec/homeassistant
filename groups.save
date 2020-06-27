@@ -1,0 +1,70 @@
+Porch Lights:
+# Pineapples
+   - switch.jasco_products_12722_on_off_relay_switch_switch_2 
+# Can Lights
+   - switch.jasco_products_12722_on_off_relay_switch_switch_3
+# Garage Light
+   - switch.jasco_products_14291_in_wall_smart_switch_switch 
+Flood Lights: 
+# Front Flood
+   - switch.jasco_products_12722_on_off_relay_switch_switch_4
+Outdoor Lighting:
+# Driveway lights
+   - switch.jasco_products_14291_in_wall_smart_switch_switch_2
+   - group.porch_lights
+   - group.flood_lights
+Indoor Lighting:
+   - group.living_room
+   - group.master_bedroom
+Living Room:
+# Living Room Lamp 1
+   - switch.ge_45603_plugin_appliance_module_switch
+# Living Room Lamp 2 
+   - switch.ge_45603_plugin_appliance_module_switch_2
+# Living Room Recessed Lights
+   - switch.ge_12722_onoff_relay_switch_switch
+# Living Room Fan Light
+   - switch.jasco_products_12722_on_off_relay_switch_switch_6 
+# Living Room Fan
+   - fan.jasco_products_12730_fan_control_switch_level
+Craft Room:
+   - media_player.craft_room_apple_tv
+Master Bedroom:
+# Master Bedroom Fan Light
+   - switch.jasco_products_12722_on_off_relay_switch_switch_5
+# Master Bedroom Fan
+   - fan.jasco_products_12730_fan_control_switch_level_2
+# Dyson Fan
+   - fan.dyson
+   - sensor.dyson_aqi
+   - sensor.dyson_dust
+   - sensor.dyson_filter_life
+   - sensor.dyson_humidity
+   - sensor.dyson_temperature
+   - media_player.master_echo
+   - media_player.master_bedroom_apple_tv
+Devices:
+   icon: mdi:home
+   entities:
+     - device_tracker.craigsiphone 
+     - device_tracker.craigsipad
+     - device_tracker.craigworkmbp
+     - device_tracker.erinsipad
+     - device_tracker.erinsiphone
+Family:
+     entities:
+       - device_tracker.craigsiphone 
+       - device_tracker.erinsiphone
+Weather:
+   - sun.sun
+   - climate.downstairs
+   - climate.upstairs
+Man Cave:
+    - switch.jasco_products_12719_plug_in_smart_switch_switch
+    - media_player.man_cave_tv
+    - media_player.man_cave_apple_tv
+Sensors:
+    - sensor.garage_entry_door
+    - sensor.batt_garage_entry_door
+    - sensor.driveway_sensor
+    - sensor.batt_driveway_sensor

@@ -1,0 +1,53 @@
+'1593176786202':
+  alias: Turn On Dyson
+  sequence:
+  - entity_id: fan.dyson
+    service: fan.turn_on
+  - data:
+      speed: 7
+    entity_id: fan.dyson
+    service: fan.set_speed
+  - data:
+      night_mode: true
+    service: dyson.set_night_mode
+'1593176897248':
+  alias: Turn Off Dyson
+  sequence:
+  - data:
+      auto_mode: true
+    entity_id: fan.dyson
+    service: dyson.set_auto_mode
+  - data:
+      night_mode: true
+    entity_id: fan.dyson
+    service: dyson.set_night_mode
+'1593177080240':
+  alias: EcoBee Set For Sleep
+  sequence:
+  - data:
+      target_temp_high: 72
+      target_temp_low: 68
+      temperature: 72
+    entity_id: climate.downstairs
+    service: climate.set_temperature
+'1593177328846':
+  alias: EcoBee Wake Up
+  sequence:
+  - data:
+      resume_all: true
+    entity_id: climate.downstairs
+    service: ecobee.resume_program
+'1593206769291':
+  alias: Bedtime
+  sequence:
+  - data: {}
+    service: script.1593176786202
+  - data: {}
+    service: script.1593177080240
+'1593206844843':
+  alias: Wake Up
+  sequence:
+  - data: {}
+    service: script.1593177328846
+  - data: {}
+    service: script.1593176897248

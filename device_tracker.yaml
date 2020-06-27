@@ -1,0 +1,6 @@
+ - platform: snmp
+   host: 10.0.10.1
+   community: !secret snmp_key
+   baseoid: 1.3.6.1.2.1.4.22.1.2
+   track_new_devices: false
+   interval_seconds: 8

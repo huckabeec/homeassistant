@@ -1,0 +1,7 @@
+- id: 'TV Time' 
+  name: 'TV Time'
+  entities:
+    switch.living_room_lamp_one_switch:
+      state: on
+    switch.living_room_lamp_two_switch_2:
+      state: on
