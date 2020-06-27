@@ -4,5 +4,6 @@ secrets.yaml
 *.db
 *.sqlite
 .storage/
+.cloud/
 OZW_Log.txt
 known_devices.yaml
