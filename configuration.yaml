@@ -24,24 +24,6 @@ dyson:
     - device_id: !secret dyson_device_id 
       device_ip: 10.0.60.17
 
-apple_tv:
-  - host: 10.0.10.228
-    start_off: true
-    name: Craft Room Apple TV
-    login_id: !secret cr_id
-  - host: 10.0.10.229
-    start_off: true
-    name: Man Cave Apple TV
-    login_id: !secret mc_id
-  - host: 10.0.10.233
-    start_off: true
-    name: Master Bedroom Apple TV
-    login_id: !secret mbr_id
-  - host: 10.0.10.234
-    start_off: true
-    name: Living Room Apple TV
-    login_id: !secret lr_id
-
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

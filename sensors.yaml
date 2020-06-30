@@ -3,13 +3,13 @@
      garage_entry_door:
        friendly_name: 'Garage Entry Door'
        value_template: >-
-         {%- if is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_alarm_level", "255") -%}
+         {%- if is_state("sensor.vision_security_zd2105us_5_recessed_door_window_sensor_alarm_level", "255") -%}
          open
          {%- else -%}
          closed
          {%- endif -%}
        icon_template: >-
-         {%- if is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_alarm_level", "255") -%} 
+         {%- if is_state("sensor.vision_security_zd2105us_5_recessed_door_window_sensor_alarm_level", "255") -%} 
          mdi:door-open 
          {%- else -%}
          mdi:door-closed
@@ -19,14 +19,19 @@
      batt_garage_entry_door:
        friendly_name: 'Garage Entry Door Battery'
        unit_of_measurement: '%'
-       value_template: "{{ state_attr('zwave.vision_security_zd2105us_5_recessed_door_window_sensor','attributes.battery_level')|int }}" 
+       value_template: >-
+         {% if states("sensor.vision_security_zd2105us_5_recessed_door_window_sensor_battery_level") -%}
+         {{ states('sensor.vision_security_zd2105us_5_recessed_door_window_sensor_battery_level') |int }}
+         {%- else -%}
+         Unknown
+         {%- endif -%}
        device_class: battery
 - platform: template
   sensors:
      driveway_sensor:
        friendly_name: 'Driveway Motion Sensor'
        value_template: >-
-         {%- if is_state("sensor.ecolink_doorwindow_sensor_access_control", "23") -%}
+         {%- if is_state("sensor.ecolink_door_window_sensor_access_control", "23") -%}
          open
          {%- else -%}
          closed
@@ -36,5 +41,10 @@
      batt_driveway_sensor:                                                                                                  
        friendly_name: 'Driveway Motion Sensor Battery'                                                                             
        unit_of_measurement: '%'  
-       value_template: "{{ states.zwave.ecolink_door_window_sensor.attributes.battery_level }}"
+       value_template: >-
+         {%- if states("sensor.ecolink_door_window_sensor_battery_level") -%} 
+         {{ states("sensor.ecolink_door_window_sensor_battery_level") |int }}
+         {%- else -%}
+         Unknown
+         {%- endif -%}
        device_class: battery
