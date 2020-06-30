@@ -7,9 +7,9 @@ frontend:
 homeassistant:
   name: Home
   time_zone: America/New_York
-  latitude: 32.7175 
-  longitude: -80.128889 
-  elevation: 20
+  latitude: 32.7177 
+  longitude: -80.12916
+  elevation: 6 
   customize: !include customize.yaml
 
 zwave:
