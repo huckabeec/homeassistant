@@ -107,4 +107,4 @@
         - media_player.living_room_echo
         data:
           type: announce 
-        message: '<voice name="Brian"><lang xml:lang="en-GB">I am terribly sorry to interrupt sir, but motion detected in the driveway.</lang></voice>'
+        message: '<voice name="Brian"><lang xml:lang="en-GB">I am terribly sorry to interrupt, but motion detected in the driveway sir.</lang></voice>'
