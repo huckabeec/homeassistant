@@ -15,6 +15,13 @@ homeassistant:
 zwave:
   usb_path: /dev/ttyACM0
   polling_interval: 1000
+  device_config:
+    fan.master_fan_level_2:
+      polling_intensity: 1
+      refresh_value: true
+    switch.jasco_products_12722_on_off_relay_switch_switch_5:
+      polling_intensity: 1
+      refresh_value: true
 
 dyson:
   username: !secret dyson_username 
